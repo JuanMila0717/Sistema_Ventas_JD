@@ -62,7 +62,7 @@ public class CategoriaControl {
             obj.setId(id);
             obj.setNombre(nombre);
             obj.setDescripcion(descripcion);
-            if(DATOS.activar(obj)){
+            if(DATOS.activar(id)){
                 return "OK";
             }else{
                 return "Error en la actualización";
