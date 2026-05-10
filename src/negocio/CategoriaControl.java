@@ -82,7 +82,7 @@ public class CategoriaControl {
           }
        }
     }
-    public String descativar(int id){
+    public String desactivar(int id){
         if(DATOS.desactivar(id)){
             return "OK";
         }else{
@@ -90,7 +90,7 @@ public class CategoriaControl {
         }
     }
     public String activar(int id){
-        if(DATOS.desactivar(id)){
+        if(DATOS.activar(id)){
             return "OK";
         }else{
             return "No se puede desactivar el registro";
