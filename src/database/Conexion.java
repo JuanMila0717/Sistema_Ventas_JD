@@ -10,15 +10,17 @@ import javax.swing.JOptionPane;
 public class Conexion {
     
     private final String DRIVER  = "com.mysql.cj.jdbc.Driver"; // Es un driver porque necesitamos componentes externos 
-    private final String URL = "jdbc:mysql://localhost:3306";
-    private final String DB = "dbsistema";
+    private final String URL = "jdbc:mysql://localhost:3306/";
+    private final String DB = "db_sistema";
     private final String USER = "root";
     private final String PASSWORD = "";
     
     public Connection cadena;
     
+    public static Conexion instancia;
     
-    public Conexion(){
+    
+    private Conexion(){
         this.cadena = null;
     }
     
@@ -42,7 +44,10 @@ public class Conexion {
         }
     }
     
-    
-    
-    
+    public synchronized static Conexion getInstancia(){
+       if(instancia == null){
+           instancia = new Conexion();
+       }
+       return instancia;
+    }  
 }
